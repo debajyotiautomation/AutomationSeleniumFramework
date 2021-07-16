@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>deb-redesign-framework</artifactId>
+        <groupId>AutomationSeleniumFramework</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>AutomationSeleniumFramework</groupId>
+    <artifactId>deb-int-test</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>AutomationSeleniumFramework</groupId>
+            <artifactId>deb-base-utils</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+    <properties>
+        <main.basedir>${project.parent.basedir}</main.basedir>
+    </properties>
+    <profiles>
+        <profile>
+            <id>was-rerun-failed-tests</id>
+            <properties>
+                <testNGPath>${core.tests.dir}/src/test/resources/testng/was-rerun-failed-tests.xml</testNGPath>
+                <was.runWithGrid>true</was.runWithGrid>
+                <!--                <application.selenium.driver>${env.BROWSER}</application.selenium.driver>-->
+                <included.groups>implemented</included.groups>
+            </properties>
+        </profile>
+
+    </profiles>
+</project>
