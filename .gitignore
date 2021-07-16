@@ -1,0 +1,7 @@
+.idea/
+allure-resulsts/
+target/.
+/was-integration-tests/allure-results/
+/was-integration-tests/target/
+/was-api-tests/target/
+*.iml
